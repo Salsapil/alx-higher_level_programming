@@ -1,0 +1,36 @@
+Import function From module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test one add two integers:
+    >>> add_integer(1, 2)
+    3
+
+Test two add one positive with one negative:
+    >>> add_integer(100, -2)
+    98
+
+Test three use one float:
+    >>> add_integer(2.8)
+    100
+
+Test four use one negative float:
+    >>> add_integer(-28)
+    70
+
+Test 5:
+    >>> add_integer(100.3, 8.2)
+    108
+
+Test 6:
+    >>> add_integer(-100.3, -8.2)
+    -108
+
+Test 7:
+
+    >>> add_integer(-1, 2)
+    1
+
+Test 8:
+    >>> add_integer(-1, -1)
+    -2
