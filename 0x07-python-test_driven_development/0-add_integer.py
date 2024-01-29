@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 module:
-This is the first task 
+This is the first task
 in Test-Driven-Development
 """
 
