@@ -1,0 +1,27 @@
+Import function From module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test one:
+    >>> text_indentation("Bella")
+    Bella
+
+Test two:
+    >>> text_indentation(2)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test three:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Test four:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test five:
+    >>> text_indentation(1, "Bella")
+    Traceback (most recent call last):
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
