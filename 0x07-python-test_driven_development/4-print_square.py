@@ -6,6 +6,10 @@ in Test-Driven-Development
 """
 
 def print_square(size):
+    """Function
+    Args:
+        size: size
+    """
     if type(size) != int:
         raise TypeError("size must be an integer")
     if size < 0:
