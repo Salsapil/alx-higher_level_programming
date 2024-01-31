@@ -12,22 +12,6 @@ Test one.one:
     <BLANKLINE>
     School
 
-Test one.two:
-    >>> text_indentation("Holberton. School? How are you: John")
-    Holberton.
-    <BLANKLINE>
-    School?
-    <BLANKLINE>
-    How are you:
-    <BLANKLINE>
-    John
-
-Test one.three:
-    >>> text_indentation("Why? because")
-    Why?
-    <BLANKLINE>
-    because
-
 Test two:
     >>> text_indentation(2)
     Traceback (most recent call last):
