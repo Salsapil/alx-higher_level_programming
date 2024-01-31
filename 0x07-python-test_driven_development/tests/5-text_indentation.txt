@@ -2,6 +2,15 @@ Import function From module:
 
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+Test one:
+    >>> text_indentation("Holberton School")
+    Holberton School
+
+Test one.one:
+    >>> text_indentation("Holberton.School")
+    Holberton.
+    <BLANKLINE>
+    School
 
 Test two:
     >>> text_indentation(2)
