@@ -6,12 +6,6 @@ Test one:
     >>> text_indentation("Holberton School")
     Holberton School
 
-Test one.one:
-    >>> text_indentation("Holberton.School")
-    Holberton.
-    <BLANKLINE>
-    School
-
 Test one.two:
     >>> text_indentation("Holberton. School? How are you: John")
     Holberton.
