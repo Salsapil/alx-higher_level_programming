@@ -8,17 +8,19 @@ Test one:
 
 Test one.one:
     >>> text_indentation("Holberton.School")
-    Holberton. <BLANKLINE> School
-
-Test one.two:
-    >>> text_indentation("Holberton. School? How are you: John")
     Holberton.
     <BLANKLINE>
-    School?
-    <BLANKLINE>
-    How are you:
-    <BLANKLINE>
-    John
+    School
+
+Test one.two:
+>>> text_indentation("Holberton. School? How are you: John")
+Holberton.
+<BLANKLINE>
+School?
+<BLANKLINE>
+How are you:
+<BLANKLINE>
+John
 
 Test two:
     >>> text_indentation(2)
