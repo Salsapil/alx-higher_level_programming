@@ -7,6 +7,11 @@ in Test-Driven-Development
 
 
 def say_my_name(first_name, last_name=""):
+    """function
+    Args:
+        first_name: First Name
+        last_name: Last Name
+    """
     if type(first_name) != str:
         raise TypeError("first_name must be a string")
     if type(last_name) != str:
