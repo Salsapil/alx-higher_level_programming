@@ -14,11 +14,11 @@ Test one.one:
 
 Test one.two:
     >>> text_indentation("Holberton. School? How are you: John")
-    Holberton. 
+    Holberton.
     <BLANKLINE>
-    School? 
+    School?
     <BLANKLINE>
-    How are you: 
+    How are you:
     <BLANKLINE>
     John
 
