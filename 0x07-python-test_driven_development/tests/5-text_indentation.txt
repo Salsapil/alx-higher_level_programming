@@ -22,10 +22,11 @@ Test one.two:
     <BLANKLINE>
     John
 
-Test random:
-    >>> text_indentation("string\n")
-    string
+Test one.three:
+    >>> text_indentation("Why? because")
+    Why?
     <BLANKLINE>
+    because
 
 Test two:
     >>> text_indentation(2)
