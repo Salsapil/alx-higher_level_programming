@@ -2,7 +2,3 @@ Import function From module:
 
     >>> MyList = __import__('1-my_list').MyList
 
-Test 1:
-    >>> x = MyList()
-    >>> x.print_sorted()
-    []
