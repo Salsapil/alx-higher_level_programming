@@ -23,10 +23,10 @@ Test 4:
     TypeError: list expected at most 1 argument, got 2
 
 Test 5:
-    >>> my_list = MyList(["apple", "banana", "cherry"])
+    >>> my_list = MyList([2, 6, 4, 'hi'])
     >>> my_list.print_sorted()
     Traceback (most recent call last):
-    TypeError: all items must be integers
+    TypeError: '<' not supported between instances of 'str' and 'int'
 
 Test 6:
     >>> my_list = MyList([10, 10, 5])
