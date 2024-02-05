@@ -11,3 +11,13 @@ Test 2:
     >>> myl = MyList([1, 5, 4, 8, 2])
     >>> myl.print_sorted()
     [1, 2, 4, 5, 8]
+
+Test 3:
+    >>> myl = MyList([1, 5, -4, 8, 2])
+    >>> myl.print_sorted()
+    [-4, 1, 2, 5, 8]
+
+Test 4:
+    >>> print(MyList([1, 5, -4, 8, 2], 1))
+    Traceback (most recent call last):
+    TypeError: list expected at most 1 argument, got 2

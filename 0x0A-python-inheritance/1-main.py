@@ -2,9 +2,6 @@
 MyList = __import__('1-my_list').MyList
 
 my_list = MyList()
-my_list.append("Hi")
-my_list.append(3)
-my_list.append(5)
 print(my_list)
 my_list.print_sorted()
-print(my_list)
+print(MyList([1, 5, -4, 8, 2], 1))
