@@ -21,3 +21,13 @@ Test 4:
     >>> print(MyList([1, 5, -4, 8, 2], 1))
     Traceback (most recent call last):
     TypeError: list expected at most 1 argument, got 2
+
+Test 5:
+    >>> my_list = MyList(["apple", "banana", "cherry"])
+    >>> my_list.print_sorted()
+    ['apple', 'banana', 'cherry']
+
+Test 6:
+    >>> my_list = MyList([10, 10, 5])
+    >>> my_list.print_sorted()
+    [5, 10, 10]
