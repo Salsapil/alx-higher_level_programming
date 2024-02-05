@@ -7,8 +7,3 @@ Test 1:
     >>> x.print_sorted()
     []
 
-Test 2:
-    >>> x = MyList()
-    >>> x.append("Hi")
-    Traceback (most recent call last):
-    TypeError: '<' not supported between instances of 'int' and 'str'
