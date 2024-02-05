@@ -2,3 +2,13 @@ Import function From module:
 
     >>> MyList = __import__('1-my_list').MyList
 
+Test 1:
+    >>> x = MyList()
+    >>> x.print_sorted()
+    []
+
+Test 2:
+    >>> x = MyList()
+    >>> x.append("Hi")
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'int' and 'str'
