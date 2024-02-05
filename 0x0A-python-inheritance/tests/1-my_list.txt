@@ -1,24 +1,32 @@
-Import function From module:
+Import function:
 
     >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
 
 Test 1:
-    >>> x = MyList()
-    >>> x.print_sorted()
-    []
+    >>> my_list.append("Hi")
+    Traceback (most recent call last):
+    TypeError: '<' not supported between instances of 'int' and 'str'
 
 Test 2:
-    >>> 
-    my_list.append(-1)
+    >>> my_list.append(-1)
     [-1]
 
 Test 3:
-    >>>
-    my_list.append("Hi")
-    Traceback (most recent call last):
-    TypeError: '<' not supported between instances of 'int' and 'str'
+    >>> my_list.append(2)
+    [2]
 
 Test 4:
     >>> my_list.append(Hi)
     Traceback (most recent call last):
     NameError: name 'my_list' is not defined
+
+Test 5:
+    >>> my_list.append(3, 4)
+    Traceback (most recent call last):
+    TypeError: list.append() takes exactly one argument (2 given)
+
+Test 6:
+    >>> my_list.append()
+    Traceback (most recent call last):
+    TypeError: list.append() takes exactly one argument (0 given)
