@@ -25,7 +25,8 @@ Test 4:
 Test 5:
     >>> my_list = MyList(["apple", "banana", "cherry"])
     >>> my_list.print_sorted()
-    ['apple', 'banana', 'cherry']
+    Traceback (most recent call last):
+    TypeError: all items must be integers
 
 Test 6:
     >>> my_list = MyList([10, 10, 5])
