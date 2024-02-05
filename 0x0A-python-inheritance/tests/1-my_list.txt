@@ -7,3 +7,7 @@ Test 1:
     >>> x.print_sorted()
     []
 
+Test 2:
+    >>> myl = MyList([1, 5, 4, 8, 2])
+    >>> myl.print_sorted()
+    [1, 2, 4, 5, 8]
