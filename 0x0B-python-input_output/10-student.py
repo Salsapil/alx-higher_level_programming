@@ -10,8 +10,8 @@ class Student:
 
     def to_json(self, attrs=None):
         try:
-            for i in attrs:
-                if not isinstance(attrs, str):
+            for attr in attrs:
+                if not isinstance(attr, str):
                     return self.__dict__
         except Exception:
             return self.__dict__
