@@ -12,5 +12,7 @@ class BaseGeometry:
         """checks value"""
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(value))
+        if type(name) is not str:
+            raise Exception("{} must be a string".format(name))
         if (value <= 0):
             raise ValueError("{} must be greater than 0".format(name))
