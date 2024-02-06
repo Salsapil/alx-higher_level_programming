@@ -2,3 +2,14 @@ Import function From module:
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+Test 1:
+    >>> b = BaseGeometry()
+    >>> b.integer_validator('width', 10)
+    >>> b.integer_validator('width', -10)
+    Traceback (most recent call last):
+    ValueError: width must be greater than 0
+
+Test 2:
+    >>> b.integer_validator('width', 10.5)
+    Traceback (most recent call last):
+    TypeError: width must be an integer
