@@ -24,3 +24,8 @@ Test 3:
     >>> b.area()
     Traceback (most recent call last):
     Exception: area() is not implemented
+
+Test 4:
+    >>> b.integer_validator("key", 0)
+    Traceback (most recent call last):
+    ValueError: key must be greater than 0
