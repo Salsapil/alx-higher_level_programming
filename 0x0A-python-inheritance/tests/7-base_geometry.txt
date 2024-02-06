@@ -2,6 +2,11 @@ Import function From module:
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+Test 0:
+    >>> b = BaseGeometry()
+    >>> type(b) == BaseGeometry
+    True
+
 Test 1:
     >>> b = BaseGeometry()
     >>> b.integer_validator('width', 10)
