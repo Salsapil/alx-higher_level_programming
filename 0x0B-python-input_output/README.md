@@ -34,10 +34,10 @@
 - Exchange data between server and web application.   
    
 ### 9- What is serialization   
-**Converting a Python data structure into a JSON string.**   
+- Converting a Python data structure into a JSON string.   
    
 ### 10- What is deserialization   
-**Converting a JSON string back into a Python data structure.**   
+- Converting a JSON string back into a Python data structure.   
    
 ### 11- How to convert a Python data structure to a JSON string   
 - json.dumps()   
