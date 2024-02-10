@@ -1,19 +1,24 @@
 ## InputOutput   
 ### 1- How to open a file   
 **open() function with two arguments: filename and mode.**   
-- my_file = open("data.txt", "r")   
+```python
+my_file = open("data.txt", "r")   
+```   
    
 ### 2- How to write text in a file   
 **write() method on the file object.**   
-- my_file.write("This is some text!")   
+```python
+my_file.write("This is some text!")   
+```   
    
 ### 3- How to read the full content of a file   
 **read() method on the file object.**   
-- file_content = my_file.read()   
+```python
+file_content = my_file.read()   
+```   
    
 ### 4- How to read a file line by line   
 **for loop with the readline() method.**   
-- 
 ```python
 for line in my_file:   
     print(line)
@@ -21,11 +26,15 @@ for line in my_file:
       
 ### 5- How to move the cursor in a file   
 **seek() method on the file object.**   
-- my_file.seek().   
+```python
+my_file.seek().   
+```   
    
 ### 6- How to make sure a file is closed after using it   
 **close() method on the file object.**   
-- my_file.close()   
+```python
+my_file.close()   
+```   
    
 ### 7- What is and how to use the with statement   
 **Automatically opens and closes a file**   
