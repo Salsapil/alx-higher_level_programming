@@ -13,11 +13,12 @@
    
 ### 4- How to read a file line by line   
 **for loop with the readline() method.**   
-- ```python
+- 
+```python
 for line in my_file:   
     print(line)
 ```   
-   
+      
 ### 5- How to move the cursor in a file   
 **seek() method on the file object.**   
 - my_file.seek().   
