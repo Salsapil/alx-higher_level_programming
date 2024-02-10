@@ -1,6 +1,6 @@
-####InputOutput
-##1- How to open a file
-**open() function with two arguments: filename and mode.**
+####InputOutput   
+##1- How to open a file   
+**open() function with two arguments: filename and mode.**   
 - my_file = open("data.txt", "r")
 ##2- How to write text in a file
 **write() method on the file object.**
