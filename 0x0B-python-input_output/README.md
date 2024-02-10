@@ -29,8 +29,8 @@
 ### 10- What is deserialization   
 **Converting a JSON string back into a Python data structure.**   
 ### 11- How to convert a Python data structure to a JSON string   
-**json.dumps()**   
+- json.dumps()   
 ### 12- How to convert a JSON string to a Python data structure   
-**json.loads()**   
+- json.loads()   
    
----   
+****
