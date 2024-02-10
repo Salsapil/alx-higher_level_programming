@@ -15,7 +15,8 @@
 **for loop with the readline() method.**   
 - ```python
 for line in my_file:   
-    print(line)```   
+    print(line)
+```   
    
 ### 5- How to move the cursor in a file   
 **seek() method on the file object.**   
