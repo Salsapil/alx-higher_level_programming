@@ -38,3 +38,14 @@ class Base:
         dummy_instance = cls(1, 1)
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        filename = cls.__name__ + ".json"
+        with open(filename, "r") as file:
+            data = file.read()
+            if data:
+                list_dicts = cls.from_json_string(data)
+                return [cls.create(**d) for d in list_dicts]
+            else:
+                return "[]"
