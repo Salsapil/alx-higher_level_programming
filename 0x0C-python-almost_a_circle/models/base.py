@@ -25,3 +25,10 @@ class Base:
         with open(file_name, "w", encoding="utf-8") as file:
             json_data = [obj.to_dictionary() for obj in list_objs]
             file.write(Base.to_json_string(json_data))
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or not json_string:
+            return "[]"
+        else:
+            return json.loads(json_string)
