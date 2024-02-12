@@ -49,7 +49,7 @@ class Base:
         """class method"""
         from models.rectangle import Rectangle
         from models.square import Square
-        if "size" in dictionary.keys():
+        if "size" in dictionary:
             square = Square(size=1)
             return square.update(**dictionary)
 
