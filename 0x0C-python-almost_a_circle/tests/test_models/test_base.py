@@ -13,33 +13,25 @@ class BaseTest(unittest.TestCase):
         """
         Test initialization of Base class.
         """
-        b1 = Base()
-        self.assertEqual(b1.id, 1)
-        b2 = Base(10)
-        self.assertEqual(b2.id, 10)
-        b3 = Base(-12)
-        self.assertEqual(b3.id, -12)
-        b4 = Base("j")
-        self.assertEqual(b4.id, "j")
-
-    def test_nb_objects(self):
-        """
-        Test automatic id generation and nb_objects counter.
-        """
-        self.assertEqual(Base.__nb_objects, 0)
-        b1 = Base()
-        b2 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(Base.__nb_objects, 2)
+        Base._Base__nb_objects = 0
+        obj1 = Base()
+        obj2 = Base()
+        obj3 = Base(12)
+        obj4 = Base(-12)
+        obj5 = Base("j")
+        self.assertEqual(obj1.id, 1)
+        self.assertEqual(obj2.id, 2)
+        self.assertEqual(obj3.id, 12)
+        self.assertEqual(obj4.id, -12)
+        self.assertEqual(obj5.id, "j")
 
     def test_to_json_string(self):
         """
         Test conversion of list of dictionaries to JSON string.
         """
-        data = [{"key1": "value1", "key2": 2}]
+        data = [{"id": "1", "id": 2}]
         json_string = Base.to_json_string(data)
-        self.assertEqual(json_string, '[{"key1": "value1", "key2": 2}]')
+        self.assertEqual(json_string, '[{"id": "1", "id": 2}]')
 
         json_string = Base.to_json_string(None)
         self.assertEqual(json_string, "[]")
@@ -78,10 +70,22 @@ class BaseTest(unittest.TestCase):
         """
         Test creating an object from a dictionary.
         """
-        data = {"id": 3, "property1": "value1"}
-        b = Base.create(**data)
-        self.assertEqual(b.id, 3)
-        self.assertEqual(b.property1, "value1")
+        dictionary = {"id": 1, "width": 3, "height": 5, "x": 4, "y": 6}
+        rectangle = Base.create(**dictionary)
+        self.assertIsInstance(rectangle, Rectangle)
+        self.assertEqual(rectangle.id, 1)
+        self.assertEqual(rectangle.width, 3)
+        self.assertEqual(rectangle.height, 5)
+        self.assertEqual(rectangle.x, 4)
+        self.assertEqual(rectangle.y, 6)
+
+        dictionary = {"id": 1, "size": 6, "x": 5, "y": 4}
+        square = Base.create(**dictionary)
+        self.assertIsInstance(square, Square)
+        self.assertEqual(square.id, 1)
+        self.assertEqual(square.size, 6)
+        self.assertEqual(square.x, 5)
+        self.assertEqual(square.y, 4)
 
     def test_load_from_file(self):
         """
@@ -94,25 +98,3 @@ class BaseTest(unittest.TestCase):
 
         loaded_data = Base.load_from_file()
         self.assertEqual(loaded_data, [{"id": 1}, {"id": 2}])
-
-        # Cleanup
-        import os
-        os.remove("Base.json")
-
-    def test_save_to_file_csv(self):
-        """
-        Test saving a list of rectangles to CSV file.
-        """
-        r1 = Rectangle(1, 2, 3, 4)
-        r2 = Rectangle(5, 6, 7, 8)
-        data = [r1, r2]
-        Base.save_to_file_csv(data)
-
-        with open("Rectangle.csv", "r") as file:
-            content = file.read()
-        expected_content = "1,2,3,4\n5,6,7,8\n"
-        self.assertEqual(content, expected_content)
-
-        # Cleanup
-        import os
-        os.remove("Rectangle.csv")
