@@ -29,26 +29,12 @@ class BaseTest(unittest.TestCase):
         """
         Test conversion of list of dictionaries to JSON string.
         """
-        data = [{"id": "1", "id": 2}]
-        json_string = Base.to_json_string(data)
-        self.assertEqual(json_string, '[{"id": "1", "id": 2}]')
+        list_dicts = [{"id": 1}, {"id": 2}, {"id": 3}]
+        json_string = Base.to_json_string(list_dicts)
+        self.assertEqual(json_string, '[{"id": 1}, {"id": 2}, {"id": 3}]')
 
         json_string = Base.to_json_string(None)
         self.assertEqual(json_string, "[]")
-
-    def test_save_to_file(self):
-        """
-        Test saving a list of objects to JSON file.
-        """
-        b1 = Base(1)
-        b2 = Base(2)
-        data = [b1, b2]
-        Base.save_to_file(data)
-
-        with open("Base.json", "r") as file:
-            content = file.read()
-        expected_content = '[{"id": 1}, {"id": 2}]'
-        self.assertEqual(content, expected_content)
 
     def test_from_json_string(self):
         """
@@ -83,17 +69,34 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(square.x, 5)
         self.assertEqual(square.y, 4)
 
-    def test_load_from_file(self):
-        """
-        Test loading objects from JSON file.
-        """
-        b1 = Base(1)
-        b2 = Base(2)
-        data = [b1, b2]
-        Base.save_to_file(data)
+    def test_save_to_file(self):
+        Base._Base__nb_objects = 0
 
-        loaded_data = Base.load_from_file()
-        self.assertEqual(loaded_data, [{"id": 1}, {"id": 2}])
+        list_rect = [Rectangle(1, 2), Rectangle(3, 4), Rectangle(5, 6)]
+        Rectangle.save_to_file(list_rect)
+        with open("Rectangle.json", "r", encoding="utf-8") as file:
+            saved_rect = Base.from_json_string(file.read())
+        self.assertEqual(
+            saved_rect,
+            [
+                {"id": 1, "width": 1, "height": 2, "x": 0, "y": 0},
+                {"id": 2, "width": 3, "height": 4, "x": 0, "y": 0},
+                {"id": 3, "width": 5, "height": 6, "x": 0, "y": 0},
+            ],
+        )
+
+    def test_load_from_file(self):
+        Base._Base__nb_objects = 0
+
+        square0 = Square(id=1, size=2, x=3, y=4)
+        Square.save_to_file([square0])
+        square1 = Square.load_from_file()
+        self.assertNotEqual(square1, square0)
+        self.assertEqual(len(square1), 1)
+        self.assertEqual(square1[0].id, 1)
+        self.assertEqual(square1[0].size, 2)
+        self.assertEqual(square1[0].x, 3)
+        self.assertEqual(square1[0].y, 4)
 
 
 if __name__ == "__main__":
