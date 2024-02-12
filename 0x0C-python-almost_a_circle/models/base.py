@@ -29,7 +29,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """class method"""
         file_name = cls.__name__ + ".json"
-        with open(file_name, "w", encoding="utf-8") as file:
+        with open(file_name, "w+", encoding="utf-8") as file:
             json_data = [obj.to_dictionary() for obj in list_objs]
             file.write(Base.to_json_string(json_data))
 
