@@ -47,12 +47,12 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """class method"""
-        from .rectangle import Rectangle
-        from .square import Square
+        from models.rectangle import Rectangle
+        from models.square import Square
         if "size" in dictionary.keys():
-            squ = Square(size=1)
-            squ.update(**dictionary)
-            return squ
+            square = Square(size=1)
+            square.update(**dictionary)
+            return square
 
         rect = Rectangle(width=1, height=1)
         rect.update(**dictionary)
