@@ -1,9 +1,13 @@
+#!/usr/bin/python3
+"""Base Class test cases"""
 import unittest
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
 
+
 class BaseTest(unittest.TestCase):
+    """test cases class"""
 
     def test_init(self):
         """
@@ -112,4 +116,3 @@ class BaseTest(unittest.TestCase):
         # Cleanup
         import os
         os.remove("Rectangle.csv")
-
