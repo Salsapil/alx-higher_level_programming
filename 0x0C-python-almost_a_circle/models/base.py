@@ -30,8 +30,11 @@ class Base:
         """class method"""
         file_name = cls.__name__ + ".json"
         with open(file_name, "w+", encoding="utf-8") as file:
-            json_data = [obj.to_dictionary() for obj in list_objs]
-            file.write(Base.to_json_string(json_data))
+            if list_objs is not None:
+                json_data = [obj.to_dictionary() for obj in list_objs]
+                file.write(Base.to_json_string(json_data))
+            else:
+                file.write(Base.to_json_string([]))
 
     @staticmethod
     def from_json_string(json_string):
