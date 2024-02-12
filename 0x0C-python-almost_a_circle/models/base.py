@@ -52,9 +52,9 @@ class Base:
         if "size" in dictionary.keys():
             square = Square(size=1)
             return square.update(**dictionary)
-        else:
-            rectangle = Rectangle(width=1, height=1)
-            return rectangle.update(**dictionary)
+
+        rectangle = Rectangle(width=1, height=1)
+        return rectangle.update(**dictionary)
 
     @classmethod
     def load_from_file(cls):
