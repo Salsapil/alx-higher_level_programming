@@ -50,10 +50,6 @@ class BaseTest(unittest.TestCase):
         expected_content = '[{"id": 1}, {"id": 2}]'
         self.assertEqual(content, expected_content)
 
-        # Cleanup
-        import os
-        os.remove("Base.json")
-
     def test_from_json_string(self):
         """
         Test loading JSON string and converting it to list of objects.
