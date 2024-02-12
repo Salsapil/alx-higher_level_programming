@@ -4,11 +4,14 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """sub class"""
+
     def __init__(self, size, x=0, y=0, id=None):
         """__init__"""
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """__str__"""
         return f"[Square] ({self.id}) {self.x}/{self.y} \
 - {self.width}"
 
@@ -19,7 +22,6 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        """setter"""
         self.width = value
         self.height = value
 

@@ -7,7 +7,6 @@ class Rectangle(Base):
     """sub class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """__init__"""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -16,7 +15,6 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """property"""
         return self.__width
 
     @width.setter
@@ -29,7 +27,6 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """property"""
         return self.__height
 
     @height.setter
@@ -42,7 +39,6 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """property"""
         return self.__x
 
     @x.setter
@@ -55,7 +51,6 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """property"""
         return self.__y
 
     @y.setter
@@ -67,21 +62,17 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """area"""
         return self.width * self.height
 
     def display(self):
-        """display"""
         print("\n" * self.y, end="")
         print(((" " * self.x) + "#" * self.width + "\n") * self.height, end="")
 
     def __str__(self):
-        """str"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
 - {self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
-        """update"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -98,7 +89,6 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """to_dictionart"""
         return {
             'x': self.x,
             'y': self.y,
