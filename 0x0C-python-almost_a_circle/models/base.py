@@ -40,7 +40,7 @@ class Base:
     def from_json_string(json_string):
         """static method"""
         if json_string is None or not json_string:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
 
@@ -61,7 +61,7 @@ class Base:
                 list_dicts = cls.from_json_string(data)
                 return [cls.create(**d) for d in list_dicts]
             else:
-                return "[]"
+                return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -98,4 +98,4 @@ class Base:
                     instances.append(instance)
                 return instances
             else:
-                return "[]"
+                return []
