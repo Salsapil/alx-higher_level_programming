@@ -98,3 +98,7 @@ class BaseTest(unittest.TestCase):
 
         loaded_data = Base.load_from_file()
         self.assertEqual(loaded_data, [{"id": 1}, {"id": 2}])
+
+
+if __name__ == "__main__":
+    unittest.main()
