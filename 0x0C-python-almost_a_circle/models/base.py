@@ -47,9 +47,14 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """class method"""
-        dummy_instance = cls(1, 1)
-        dummy_instance.update(**dictionary)
-        return dummy_instance
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if "size" in dictionary.keys():
+            square = Square(size=1)
+            return square.update(**dictionary)
+        else:
+            rectangle = Rectangle(width=1, height=1)
+            return rectangle.update(**dictionary)
 
     @classmethod
     def load_from_file(cls):
