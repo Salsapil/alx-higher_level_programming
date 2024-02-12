@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""module"""
 import json
 import csv
 
@@ -7,6 +8,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """__init__"""
         if id is not None:
             self.id = id
         else:
@@ -15,6 +17,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """static method"""
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
@@ -22,6 +25,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """class method"""
         file_name = cls.__name__ + ".json"
         with open(file_name, "w", encoding="utf-8") as file:
             json_data = [obj.to_dictionary() for obj in list_objs]
@@ -29,6 +33,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """static method"""
         if json_string is None or not json_string:
             return "[]"
         else:
@@ -36,12 +41,14 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """class method"""
         dummy_instance = cls(1, 1)
         dummy_instance.update(**dictionary)
         return dummy_instance
 
     @classmethod
     def load_from_file(cls):
+        """class method"""
         filename = cls.__name__ + ".json"
         with open(filename, "r") as file:
             data = file.read()
@@ -53,6 +60,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """class method"""
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as file:
             writer = csv.writer(file)
@@ -65,6 +73,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """class method"""
         filename = cls.__name__ + ".csv"
         with open(filename, "r") as file:
             reader = csv.reader(file)
