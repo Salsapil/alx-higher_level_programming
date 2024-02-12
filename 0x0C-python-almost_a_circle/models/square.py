@@ -21,7 +21,7 @@ class Square(Rectangle):
     def size(self):
         """
         getter for size property
-        
+
         Returns:
             int: The size of the rectangle.
         """
@@ -31,7 +31,7 @@ class Square(Rectangle):
     def size(self, value):
         """
         setter for size property
-        
+
         Args:
             value (int): The new size of the rectangle.
         """
