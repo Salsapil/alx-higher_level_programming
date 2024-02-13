@@ -106,3 +106,44 @@ class Base:
                 return instances
             else:
                 return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws our shapes"""
+        from turtle import Turtle
+        import turtle
+        tr = Turtle()
+        tr.speed(1)
+        tr.shapesize(1)
+        tr.color('#d3687f')
+        tr.shape('turtle')
+        tr.fillcolor("#D6ED17")
+        tr.width(1)
+        for rect in list_rectangles:
+            tr.setpos(rect.x, rect.y)
+            tr.pendown()
+            tr.forward(rect.width)
+            tr.right(90)
+            tr.forward(rect.height)
+            tr.right(90)
+            tr.forward(rect.width)
+            tr.right(90)
+            tr.forward(rect.height)
+            tr.right(90)
+            tr.penup()
+        tr.color('#D6ED17')
+        tr.fillcolor("#d3687f")
+        for sqr in list_squares:
+            tr.setpos(sqr.x, sqr.y)
+            tr.pendown()
+            tr.backward(sqr.size)
+            tr.right(90)
+            tr.backward(sqr.size)
+            tr.right(90)
+            tr.backward(sqr.size)
+            tr.right(90)
+            tr.backward(sqr.size)
+            tr.right(90)
+            tr.penup()
+        tr.hideturtle()
+        turtle.done()
