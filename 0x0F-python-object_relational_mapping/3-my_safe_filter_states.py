@@ -1,4 +1,4 @@
-#!/home/salsabil/alx-higher_level_programming/.venv/bin/python
+#!/husr/bin/python3
 """lists all states with a name starting with N (upper N)"""
 import sys
 import MySQLdb
