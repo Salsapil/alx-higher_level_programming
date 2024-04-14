@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa."""
+"""lists all states with a name starting with N (upper N)"""
 import sys
 import MySQLdb
 
@@ -9,6 +9,8 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states")
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        if (row[1][0] == "N"): {
+            print(row)
+        }
     cur.close()
     conn.close()
