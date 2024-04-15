@@ -1,12 +1,9 @@
-#!/usr/bin/python3
+#!/home/salsabil/alx-higher_level_programming/.venv/bin/python
 """state Module"""
 
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-
-Base = declarative_base()
-
+from relationship_city import Base
 
 class State(Base):
     """states Class"""

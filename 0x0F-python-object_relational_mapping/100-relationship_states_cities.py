@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/salsabil/alx-higher_level_programming/.venv/bin/python
 """States Module"""
 
 import sys
