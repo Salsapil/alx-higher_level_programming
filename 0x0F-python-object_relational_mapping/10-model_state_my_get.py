@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/salsabil/alx-higher_level_programming/.venv/bin/python
 """state Module"""
 
 import sys
@@ -15,7 +15,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     Session = Session()
-    states = Session.query(State).filter(State.name.like("%a%")) \
-        .order_by(State.id)
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    states = Session.query(State).filter(State.name == sys.argv[4]).first()
+    if states:
+        print("{}: {}".format(states.id))
+    else:
+        print("Nothing")
