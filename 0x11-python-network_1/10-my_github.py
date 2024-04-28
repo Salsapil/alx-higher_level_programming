@@ -19,7 +19,7 @@ def main():
         data = response.json()
         print(data['id'])
     except requests.exceptions.RequestException as err:
-        print("Error: {}".format(err))
+        print("None")
 
 
 if __name__ == "__main__":
