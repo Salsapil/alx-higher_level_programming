@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """search api"""
 import sys
-import json
 import requests
 
 
