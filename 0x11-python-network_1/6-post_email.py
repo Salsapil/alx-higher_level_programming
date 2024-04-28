@@ -7,7 +7,7 @@ import requests
 def main():
     url = sys.argv[1]
     email = {"email": sys.argv[2]}
-    with requests.get(url, email) as response:
+    with requests.post(url, email) as response:
         print(response.text)
 
 
