@@ -20,7 +20,7 @@ def main():
 
     except requests.exceptions.RequestException as err:
         print("Error: {}".format(err))
-    except json.JSONDecodeError:
+    except Exception:
         print("Not a valid JSON")
 
 
