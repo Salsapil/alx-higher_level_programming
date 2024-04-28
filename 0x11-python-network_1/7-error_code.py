@@ -2,17 +2,16 @@
 """displays the body of the response"""
 import sys
 import requests
-from urllib import error
 
 
 def main():
     url = sys.argv[1]
     try:
-        with requests.post(url) as response:
+        with requests.get(url) as response:
             response.raise_for_status()
             print(response.text)
 
-    except error.HTTPError as err:
+    except:
         print("Error code: {}".format(response.status_code))
 
 
