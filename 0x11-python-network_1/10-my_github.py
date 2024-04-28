@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """takes GitHub credentials and uses the GitHub API to display your id"""
-import requests
 import sys
-
+import requests
 import requests.auth
 
 
