@@ -11,7 +11,7 @@ def main():
             response.raise_for_status()
             print(response.text)
 
-    except:
+    except Exception:
         print("Error code: {}".format(response.status_code))
 
 
