@@ -3,6 +3,8 @@
 import requests
 import sys
 
+import requests.auth
+
 
 def main():
     username = sys.argv[1]
