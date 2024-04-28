@@ -3,6 +3,7 @@
 import requests
 import sys
 
+
 def main():
     username = sys.argv[1]
     password = sys.argv[2]
@@ -17,6 +18,7 @@ def main():
         print(data['id'])
     except requests.exceptions.RequestException as err:
         print("Error: {}".format(err))
+
 
 if __name__ == "__main__":
     main()
